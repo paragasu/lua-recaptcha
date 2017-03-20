@@ -24,3 +24,7 @@ valid(g_captcha_response, remote_ip)
     ngx.say('valid captcha')
   end
 ```
+
+
+# Reference
+[Recaptcha API](https://developers.google.com/recaptcha/docs/invisible)
