@@ -8,12 +8,17 @@ local site_key, secret_key
 local m = {}
 
 function m:new(config_site_key, config_secret_key)
+  if not config_site_key then return nil, 'Missing required site_key' end
+  if not config_secret_key then return nil, 'Missing required secret_key' end
   site_key = config_site_key
   secret_key = config_secret_key
+  return self
 end
 
 
 function m.valid(g_captcha_res, remote_ip)
+  if not g_captcha_res then return nil, 'Missing required g-captcha-response' end
+  if not remote_ip then return nil, 'Missing require remote_ip' end
   local data =  {
     secret   = secret_key,
     response = g_captcha_res,
