@@ -8,7 +8,7 @@ Google backend implementation for lua.
   #luarocks install lua-recaptcha
 ```
 
-# Client side integration
+### Client side integration
 
 Paste the following snippet in the HEAD section
 
